@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DigitalCore | Authority Growth Agency</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand fw-bold fs-3" href="#"
+          >DIGITAL<span class="text-primary">CORE</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#home" id="nav-home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services" id="nav-services"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about" id="nav-about">About</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#contact" id="nav-contact">Contact</a>
+            </li>
+            <div class="lang-switcher">
+              <button
+                onclick="toggleLang('en')"
+                id="en-btn"
+                class="lang-btn active"
+              >
+                EN
+              </button>
+              <button onclick="toggleLang('fr')" id="fr-btn" class="lang-btn">
+                FR
+              </button>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-3 fw-bold mb-4" id="h-title">
+              Turn Your Clicks Into <span class="text-primary">Customers</span>
+            </h1>
+            <p class="lead text-secondary mb-5" id="h-sub">
+              We specialize in increasing your online visibility through premium
+              web design and strategic SEO that actually moves the needle.
+            </p>
+            <div
+              class="d-flex gap-3 justify-content-center justify-content-lg-start"
+            >
+              <a
+                href="#contact"
+                class="btn btn-primary btn-lg px-5 py-3 fw-bold"
+                id="h-btn"
+                >Free Strategy Audit</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 mt-5 mt-lg-0">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+              class="img-fluid rounded-5 shadow-lg"
+              alt="Digital Marketing Dashboard"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="services" class="section-padding mb-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="display-5 fw-bold" id="s-title">Our Expertise</h2>
+          <div class="header-line mx-auto"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="custom-card">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=500"
+                class="card-img-top rounded-top-4"
+                alt="SEO"
+              />
+              <div class="p-4">
+                <h4 id="s1-h">SEO Authority</h4>
+                <p class="text-secondary" id="s1-p">
+                  Stop hiding on page 2. We optimize your visibility so
+                  customers find you first.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="custom-card">
+              <img
+                src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&q=80&w=500"
+                class="card-img-top rounded-top-4"
+                alt="Web Design"
+              />
+              <div class="p-4">
+                <h4 id="s2-h">Web Excellence</h4>
+                <p class="text-secondary" id="s2-p">
+                  Fast, responsive, and modern websites designed to convert
+                  visitors into revenue.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="custom-card">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=500"
+                class="card-img-top rounded-top-4"
+                alt="Strategy"
+              />
+              <div class="p-4">
+                <h4 id="s3-h">Growth Strategy</h4>
+                <p class="text-secondary" id="s3-p">
+                  Custom roadmaps tailored to your specific goals and target
+                  audience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-padding bg-black">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="display-5 fw-bold mb-4" id="a-t">
+              A Results-Driven Approach
+            </h2>
+            <p class="text-secondary mb-4" id="a-d1">
+              A website is a business tool, not an art project. We bridge the
+              gap between high-end aesthetics and technical performance.
+            </p>
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <i class="bi bi-check-circle-fill text-primary"></i>
+              <span id="a-check1">Data-backed decision making</span>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+              <i class="bi bi-check-circle-fill text-primary"></i>
+              <span id="a-check2">Mobile-first conversion design</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div
+              class="stats-box p-5 rounded-4 text-center border border-secondary"
+            >
+              <h2 class="text-primary fw-bold display-4">24/7</h2>
+              <p class="mb-0 text-secondary" id="a-stat-text">
+                Monitoring & Optimization
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-padding">
+      <div class="container">
+        <div
+          class="contact-card p-5 rounded-5 shadow-lg border border-secondary"
+        >
+          <div class="row g-5">
+            <div class="col-lg-5">
+              <h2 class="fw-bold mb-4" id="c-t">Ready to Level Up?</h2>
+              <p class="text-secondary" id="c-d">
+                Let's discuss how we can transform your digital presence.
+              </p>
+              <hr class="my-4 border-secondary" />
+              <div class="d-flex align-items-center gap-3">
+                <i class="bi bi-envelope text-primary fs-4"></i>
+                hello@digitalcore.com
+              </div>
+            </div>
+            <div class="col-lg-7">
+              <form id="contactForm">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Name"
+                      id="f-name"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Email"
+                      id="f-email"
+                    />
+                  </div>
+                  <div class="col-12">
+                    <textarea
+                      class="form-control"
+                      rows="4"
+                      placeholder="Your Project"
+                      id="f-msg"
+                    ></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button
+                      class="btn btn-primary w-100 py-3 fw-bold"
+                      id="f-btn"
+                    >
+                      Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="pt-5 mt-5">
+      <div class="container">
+        <div class="row g-4 mb-5">
+          <div class="col-lg-4">
+            <h4 class="fw-bold text-white">
+              DIGITAL<span class="text-primary">CORE</span>
+            </h4>
+            <p class="text-secondary small mt-3">
+              Building digital authority for modern brands through design and
+              data.
+            </p>
+          </div>
+          <div class="col-lg-2 offset-lg-2">
+            <h6 class="text-white fw-bold mb-3">Links</h6>
+            <ul class="list-unstyled small text-secondary">
+              <li><a href="#home" class="footer-link">Home</a></li>
+              <li><a href="#services" class="footer-link">Services</a></li>
+              <li><a href="#about" class="footer-link">About</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <h6 class="text-white fw-bold mb-3">Connect</h6>
+            <div class="d-flex gap-3 justify-content-lg-end">
+              <a href="#" class="text-secondary fs-4"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" class="text-secondary fs-4"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" class="text-secondary fs-4"
+                ><i class="bi bi-twitter-x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="border-top border-secondary pt-4 text-center">
+          <p class="small text-muted" id="f-copy">
+            &copy; 2026 DigitalCore Growth Agency. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

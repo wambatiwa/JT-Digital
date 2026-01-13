@@ -26,6 +26,13 @@ const content = {
     fm: "Your Project",
     fb: "Send Message",
     fc: "© 2026 DigitalCore Growth Agency. All rights reserved.",
+    lName: "Full Name",
+    lEmail: "Email Address",
+    lMsg: "How can I help you?",
+    pName: "e.g. Alex Johnson",
+    pEmail: "alex@company.com",
+    pMsg: "Tell me about your project goals...",
+    fBtn: "Send Message",
   },
   fr: {
     navHome: "Accueil",
@@ -54,6 +61,13 @@ const content = {
     fm: "Votre Projet",
     fb: "Envoyer le Message",
     fc: "© 2026 Agence DigitalCore. Tous droits réservés.",
+    lName: "Nom Complet",
+    lEmail: "Adresse Email",
+    lMsg: "Comment puis-je vous aider ?",
+    pName: "ex: Jean Dupont",
+    pEmail: "jean@entreprise.com",
+    pMsg: "Parlez-moi de vos objectifs de projet...",
+    fBtn: "Envoyer le Message",
   },
 };
 
@@ -85,6 +99,12 @@ function toggleLang(lang) {
   document.getElementById("f-msg").placeholder = t.fm;
   document.getElementById("f-btn").innerText = t.fb;
   document.getElementById("f-copy").innerText = t.fc;
+  document.getElementById("label-name").innerText = t.lName;
+  document.getElementById("label-email").innerText = t.lEmail;
+  document.getElementById("label-msg").innerText = t.lMsg;
+  document.getElementById("f-name").placeholder = t.pName;
+  document.getElementById("f-email").placeholder = t.pEmail;
+  document.getElementById("f-msg").placeholder = t.pMsg;
 
   document.getElementById("en-btn").classList.toggle("active", lang === "en");
   document.getElementById("fr-btn").classList.toggle("active", lang === "fr");

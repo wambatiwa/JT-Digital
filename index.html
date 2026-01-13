@@ -205,35 +205,61 @@
               </div>
             </div>
             <div class="col-lg-7">
-              <form id="contactForm">
-                <div class="row g-3">
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                id="contactForm"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+
+                <div class="row g-4">
                   <div class="col-md-6">
+                    <label for="f-name" class="form-label" id="label-name"
+                      >Full Name</label
+                    >
                     <input
                       type="text"
-                      class="form-control"
-                      placeholder="Name"
+                      name="name"
                       id="f-name"
+                      class="form-control"
+                      placeholder="e.g. Alex Johnson"
+                      required
                     />
                   </div>
+
                   <div class="col-md-6">
+                    <label for="f-email" class="form-label" id="label-email"
+                      >Email Address</label
+                    >
                     <input
                       type="email"
-                      class="form-control"
-                      placeholder="Email"
+                      name="email"
                       id="f-email"
+                      class="form-control"
+                      placeholder="alex@company.com"
+                      required
                     />
                   </div>
+
                   <div class="col-12">
+                    <label for="f-msg" class="form-label" id="label-msg"
+                      >How can I help you?</label
+                    >
                     <textarea
-                      class="form-control"
-                      rows="4"
-                      placeholder="Your Project"
+                      name="message"
                       id="f-msg"
+                      class="form-control"
+                      rows="5"
+                      placeholder="Tell me about your project goals..."
+                      required
                     ></textarea>
                   </div>
+
                   <div class="col-12">
                     <button
-                      class="btn btn-primary w-100 py-3 fw-bold"
+                      type="submit"
+                      class="btn btn-primary w-100 py-3 fw-bold shadow-lg"
                       id="f-btn"
                     >
                       Send Message

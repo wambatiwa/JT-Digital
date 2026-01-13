@@ -109,3 +109,36 @@ function toggleLang(lang) {
   document.getElementById("en-btn").classList.toggle("active", lang === "en");
   document.getElementById("fr-btn").classList.toggle("active", lang === "fr");
 }
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const btn = document.getElementById("f-btn");
+    
+    // Check current language for the "Sending" text
+    const isEn = document.getElementById('en-btn').classList.contains('active');
+    btn.innerText = isEn ? "Sending..." : "Envoi...";
+    btn.disabled = true;
+
+    // The key part for Netlify AJAX:
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => {
+        // Bilingual Success Message
+        alert(isEn ? "Success! Message sent." : "Succès ! Message envoyé.");
+        contactForm.reset();
+      })
+      .catch((error) => alert(error))
+      .finally(() => {
+        btn.innerText = isEn ? "Send Message" : "Envoyer le Message";
+        btn.disabled = false;
+      });
+  });
+}

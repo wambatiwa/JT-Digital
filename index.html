@@ -210,10 +210,25 @@
                 method="POST"
                 data-netlify="true"
                 id="contactForm"
+                data-netlify-honeypot="bot-field"
               >
                 <input type="hidden" name="form-name" value="contact" />
 
+                <input
+                  type="hidden"
+                  name="subject"
+                  id="dynamic-subject"
+                  value="New Growth Inquiry from %{name}"
+                />
+
                 <div class="row g-4">
+                  <p class="d-none">
+                    <label
+                      >Don’t fill this out if you're human:
+                      <input name="bot-field"
+                    /></label>
+                  </p>
+
                   <div class="col-md-6">
                     <label for="f-name" class="form-label" id="label-name"
                       >Full Name</label

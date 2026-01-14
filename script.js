@@ -110,35 +110,44 @@ function toggleLang(lang) {
   document.getElementById("fr-btn").classList.toggle("active", lang === "fr");
 }
 
-const contactForm = document.getElementById("contactForm");
+function sanitizeInput(str) {
+    const temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML.trim();
+}
 
-if (contactForm) {
-  contactForm.addEventListener("submit", (e) => {
+contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const formData = new FormData(contactForm);
+    // 1. Get raw data
+    const rawName = document.getElementById("f-name").value;
+    const rawEmail = document.getElementById("f-email").value;
+    const rawMsg = document.getElementById("f-msg").value;
+
+    // 2. SANITIZE: Clean the data before sending
+    const cleanData = new URLSearchParams();
+    cleanData.append("form-name", "contact");
+    cleanData.append("name", sanitizeInput(rawName));
+    cleanData.append("email", sanitizeInput(rawEmail));
+    cleanData.append("message", sanitizeInput(rawMsg));
+    // Important: Include the subject for Netlify
+    cleanData.append("subject", document.getElementById("dynamic-subject").value);
+
     const btn = document.getElementById("f-btn");
-    
-    // Check current language for the "Sending" text
-    const isEn = document.getElementById('en-btn').classList.contains('active');
-    btn.innerText = isEn ? "Sending..." : "Envoi...";
     btn.disabled = true;
 
-    // The key part for Netlify AJAX:
+    // 3. Send the CLEAN data
     fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: cleanData.toString(),
     })
-      .then(() => {
-        // Bilingual Success Message
-        alert(isEn ? "Success! Message sent." : "Succès ! Message envoyé.");
+    .then(() => {
+        alert("Message sent successfully!");
         contactForm.reset();
-      })
-      .catch((error) => alert(error))
-      .finally(() => {
-        btn.innerText = isEn ? "Send Message" : "Envoyer le Message";
+    })
+    .catch((error) => alert("Error: " + error))
+    .finally(() => {
         btn.disabled = false;
-      });
-  });
-}
+    });
+});
